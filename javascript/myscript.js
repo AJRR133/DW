@@ -1,5 +1,5 @@
 alert("Hello to js");
-
+/*
 console.log("VIEJO VERDE")
 
 var table = "Normal table"; // var para variables grandes
@@ -65,7 +65,49 @@ console.log (cua[5]);
 ter[1] = 9
 console.log(ter)
 
-
 console.log(cua)
 cua[4][1] = 4;
 console.log(cua)
+
+*/
+
+var ter = new Array (3,5,3,1,5,3,7,8,5,103,35,25,5,67,57,357,573,735,42,46,64,47,57);
+
+/*
+for( var i= 0; ter.length> i; i++){
+    console.log(ter[i]);
+}*/
+/*
+
+for (var i = ter.length-1;i>=0;i--){
+    console.log(ter[i]);
+}
+*/
+/*
+var i = ter.length-1;
+for(;i>=0;i--){
+    console.log(ter[i])
+}*/
+
+/*
+ter.forEach(function myFunction(item) {
+  console.log(item); 
+});
+*/
+/*
+let today = new Date();
+let first_oct = new Date(2022,9,1);
+
+console.log(today)
+console.log(first_oct)
+console.log(today.getDay())
+
+if(today>first_oct){
+    console.log("mayor")
+} else {
+    console.log("menor")
+}*/
+
+function funcionbotton(){
+    console.log("gracias")
+}
