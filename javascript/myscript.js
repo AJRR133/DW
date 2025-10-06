@@ -111,3 +111,28 @@ if(today>first_oct){
 function funcionbotton(){
     console.log("gracias")
 }
+
+function mysecondFuction(){
+    console.log("gracias por tu interes")
+}
+
+function my3Fuction(mensaje){
+    console.log("pesao")
+    console.log(mensaje)
+}
+
+var div = document.getElementById("my_div");
+div.classList.add("my_class");
+console.log(div);
+
+var div2 = document.getElementsByTagName("div")
+console.log(div2)
+
+var div3 = document.querySelector("#my_2div");
+console.log(div3);
+
+function $(selector){
+    return document.querySelectorAll(selector)
+}
+console.log($("#my_3div"))
+console.log($(".my_class"))
