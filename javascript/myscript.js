@@ -1,4 +1,7 @@
-alert("Hello to js");
+//alert("Hello to js");
+function $(selector){
+    return document.querySelector(selector)
+}
 /*
 console.log("VIEJO VERDE")
 
@@ -131,8 +134,23 @@ console.log(div2)
 var div3 = document.querySelector("#my_2div");
 console.log(div3);
 
-function $(selector){
-    return document.querySelectorAll(selector)
-}
+
 console.log($("#my_3div"))
 console.log($(".my_class"))
+console.log($(".pruebas"))
+
+$("#btn").addEventListener("click",function(){
+    var input = document.createElement("input");
+    input.setAttribute("type","email")
+    input.setAttribute("placeholder","E-mail")
+    input.setAttribute("name","emails[]")
+    $("#form").appendChild(input)
+    myAlert("Add a new email input")
+});
+
+function myAlert(msg){
+    var div = document.createElement("div");
+    div.classList.add("alert")
+    div.innerHTML = msg
+    $("body").insertBefore(div,$("body").firstChild)
+} 
