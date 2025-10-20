@@ -3,33 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulario Validado</title>
+  <title>Formulario Mejorado</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>Formulario de Registro</h1>
+  <h1>Registro de Usuario</h1>
 
   <form id="form">
-    <input type="text" name="nombre" placeholder="Nombre *">
-    <input type="text" name="apellido" placeholder="Apellido *">
-    <input type="email" name="email" placeholder="Correo electrónico *">
-    <input type="tel" name="telefono" placeholder="Teléfono (9 dígitos)" pattern="\d{9}" inputmode="numeric" required>
-    <input type="text" name="dni" placeholder="DNI (12345678X)" pattern="\d{8}[A-Za-z]" maxlength="9" required>
-    <input type="password" name="password" placeholder="Contraseña *">
-    <input type="password" name="confirmPassword" placeholder="Confirmar Contraseña *">
-    <input type="date" name="fechaNacimiento">
-    
-    <select name="genero">
+    <input type="text" name="nombre" placeholder="Nombre *" required>
+    <input type="text" name="apellido" placeholder="Apellido *" required>
+    <input type="email" name="email" placeholder="Correo electrónico *" required>
+    <input type="tel" name="telefono" placeholder="Teléfono (9 dígitos) *" pattern="\d{9}" inputmode="numeric" required>
+    <input type="text" name="dni" placeholder="DNI (12345678X) *" pattern="\d{8}[A-Za-z]" maxlength="9" required>
+    <input type="password" name="password" placeholder="Contraseña *" required>
+    <input type="password" name="confirmPassword" placeholder="Confirmar Contraseña *" required>
+    <input type="date" name="fechaNacimiento" required>
+
+    <select name="genero" required>
       <option value="">Seleccione género *</option>
       <option value="masculino">Masculino</option>
       <option value="femenino">Femenino</option>
       <option value="otro">Otro</option>
     </select>
 
-    <label><input type="checkbox" name="terminos"> Acepto los términos *</label>
+    <input type="text" name="direccion" placeholder="Dirección completa *" required>
+    <input type="text" name="ciudad" placeholder="Ciudad *" required>
+    <input type="text" name="codigoPostal" placeholder="Código Postal *" pattern="\d{5}" required>
 
-    <button type="submit">Enviar</button>
+    <label class="checkbox">
+      <input type="checkbox" name="terminos"> Acepto los términos y condiciones *
+    </label>
+
+    <button type="submit">Registrar</button>
   </form>
 
   <script src="javascript/myscript.js"></script>

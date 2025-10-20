@@ -1,60 +1,74 @@
 body {
-    font-family: Arial, sans-serif;
-    background: #f0f0f0;
-    padding: 20px;
-  }
-  
-  h1 {
-    text-align: center;
-  }
-  
-  form {
-    max-width: 500px;
-    margin: auto;
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-  }
-  
-  input, select {
-    display: block;
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  input:invalid {
-    border-color: red;
-  }
-  
-  button {
-    padding: 10px 20px;
-    background: #0077cc;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background: #005fa3;
-  }
-  
-  .alert {
-    max-width: 500px;
-    margin: 10px auto;
-    background: #ffc0c0;
-    padding: 10px;
-    border: 1px solid red;
-    border-radius: 4px;
-    position: relative;
-  }
-  
-  .alert .close {
-    float: right;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
+  font-family: 'Segoe UI', sans-serif;
+  background-image: url('https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 40px;
+  color: #ffffff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+form {
+  max-width: 600px;
+  margin: 40px auto;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+input:invalid {
+  border-color: red;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #0077cc;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #005fa3;
+}
+
+.alert {
+  max-width: 600px;
+  margin: 10px auto;
+  background: #ffc0c0;
+  padding: 10px;
+  border: 1px solid red;
+  border-radius: 6px;
+  position: relative;
+}
+
+.alert .close {
+  float: right;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.checkbox {
+  margin-bottom: 15px;
+}
