@@ -1,43 +1,76 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulario Mejorado</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulario Validado con JavaScript</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <h1>Registro de Usuario</h1>
 
   <form id="form">
-    <input type="text" name="nombre" placeholder="Nombre *" required>
-    <input type="text" name="apellido" placeholder="Apellido *" required>
-    <input type="email" name="email" placeholder="Correo electrónico *" required>
-    <input type="tel" name="telefono" placeholder="Teléfono (9 dígitos) *" pattern="\d{9}" inputmode="numeric" required>
-    <input type="text" name="dni" placeholder="DNI (12345678X) *" pattern="\d{8}[A-Za-z]" maxlength="9" required>
-    <input type="password" name="password" placeholder="Contraseña *" required>
-    <input type="password" name="confirmPassword" placeholder="Confirmar Contraseña *" required>
-    <input type="date" name="fechaNacimiento" required>
+    <fieldset>
+      <legend>Datos personales</legend>
+      <label>Nombre *</label>
+      <input type="text" name="nombre" placeholder="Tu nombre" required />
 
-    <select name="genero" required>
-      <option value="">Seleccione género *</option>
-      <option value="masculino">Masculino</option>
-      <option value="femenino">Femenino</option>
-      <option value="otro">Otro</option>
-    </select>
+      <label>Apellido *</label>
+      <input type="text" name="apellido" placeholder="Tu apellido" required />
 
-    <input type="text" name="direccion" placeholder="Dirección completa *" required>
-    <input type="text" name="ciudad" placeholder="Ciudad *" required>
-    <input type="text" name="codigoPostal" placeholder="Código Postal *" pattern="\d{5}" required>
+      <label>Correo electrónico *</label>
+      <input type="email" name="email" placeholder="ejemplo@correo.com" required />
+
+      <label>Teléfono (9 dígitos) *</label>
+      <input type="tel" name="telefono" placeholder="999999999" pattern="\d{9}" required />
+
+      <label>DNI (12345678X) *</label>
+      <input type="text" name="dni" placeholder="12345678X" maxlength="9" required />
+
+      <label>Contraseña *</label>
+      <input type="password" name="password" placeholder="Mínimo 6 caracteres" required />
+
+      <label>Confirmar contraseña *</label>
+      <input type="password" name="confirmPassword" placeholder="Repite la contraseña" required />
+
+      <label>Fecha de nacimiento *</label>
+      <input type="date" name="fechaNacimiento" required />
+
+      <label>Género *</label>
+      <select name="genero" required>
+        <option value="">Seleccione una opción</option>
+        <option value="masculino">Masculino</option>
+        <option value="femenino">Femenino</option>
+        <option value="otro">Otro</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <legend>Dirección y contacto</legend>
+      <label>Dirección completa *</label>
+      <input type="text" name="direccion" placeholder="Calle, número, piso..." required />
+
+      <label>Ciudad *</label>
+      <input type="text" name="ciudad" placeholder="Ciudad" required />
+
+      <label>Código Postal *</label>
+      <input type="text" name="codigoPostal" placeholder="Ej: 28001" pattern="\d{5}" required />
+
+      <label>Página web (opcional)</label>
+      <input type="url" name="web" placeholder="https://tusitio.com" />
+    </fieldset>
 
     <label class="checkbox">
-      <input type="checkbox" name="terminos"> Acepto los términos y condiciones *
+      <input type="checkbox" name="terminos" /> Acepto los términos y condiciones *
     </label>
 
     <button type="submit">Registrar</button>
+    <p id="contador"></p>
   </form>
 
-  <script src="javascript/myscript.js"></script>
+  <div id="errores"></div>
+
+  <script src="myscript.js"></script>
 </body>
 </html>
