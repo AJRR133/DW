@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vista ejs</title>
-</head>
-<body>
+<%- include("templates/cabecera",{tituloweb:"gds 2"}) %>
     <h1> vista ejs</h1>
     <h2><%= titulo %> </h2>
-</body>
-</html>
+    <p><%= descripcion %> </p>
+    <%- include("templates/cierre") %>

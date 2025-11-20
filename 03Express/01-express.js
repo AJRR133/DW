@@ -12,7 +12,11 @@ app.use(express.static(__dirname+'/public'));
 })*/
 
 app.get('/pruebas', (req, res) => {
-  res.render("pruebas",{titulo:"Titulo dinamico"})
+  res.render("pruebas",{titulo:"Titulo dinamico",descripcion:"descripcion JS"})
+})
+
+app.get('/pruebas2', (req, res) => {
+  res.render("pruebas2",{titulo2:"Titulo dinamico 2",descripcion2:"descripcion JS 2"})
 })
 
 app.get('/contacto', (req, res) => {
