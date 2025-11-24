@@ -11,6 +11,10 @@ app.use(express.static(__dirname+'/public'));
  res.status(404).sendFile(__dirname+'/public/html/404.html')
 })*/
 
+
+app.use('/', require('./router/rutas'));
+app.use('/pokemon', require('./router/pokemon'));
+
 app.get('/pruebas', (req, res) => {
   res.render("pruebas",{titulo:"Titulo dinamico",descripcion:"descripcion JS"})
 })
@@ -19,10 +23,8 @@ app.get('/pruebas2', (req, res) => {
   res.render("pruebas2",{titulo2:"Titulo dinamico 2",descripcion2:"descripcion JS 2"})
 })
 
-app.get('/contacto', (req, res) => {
-    console.log(__dirname)
-  res.send('contacto')
-})
+
+
 app.get('/about_us', (req, res) => {
     console.log(__dirname)
   res.send('about_us')
