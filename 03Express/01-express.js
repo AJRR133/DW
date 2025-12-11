@@ -7,6 +7,8 @@ app.use('views', express.static(__dirname+'/views'));
 app.use(express.static(__dirname+'/public'));
 
 
+
+
 /*app.use ((req,res) => {
  res.status(404).sendFile(__dirname+'/public/html/404.html')
 })*/
@@ -14,6 +16,16 @@ app.use(express.static(__dirname+'/public'));
 
 app.use('/', require('./router/rutas'));
 app.use('/pokemon', require('./router/pokemon'));
+
+const mongoose = require('mongoose');
+const user ='arenrod133_db_user';
+const password = 'AWLJNU';
+const dbname = 'pokemon';
+const uri = `mongodb+srv://${user}:${password}@cluster.uizdr79.mongodb.net/${dbname}?retryWrites=true&w=majority`;
+mongoose.connect(uri)
+
+  .then(()=>console.log('Base de datos conectada'))
+  //.then(()=>console.log(e))
 
 app.get('/pruebas', (req, res) => {
   res.render("pruebas",{titulo:"Titulo dinamico",descripcion:"descripcion JS"})

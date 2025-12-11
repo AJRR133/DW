@@ -1,0 +1,26 @@
+<%- include("templates/cabecera",{titulo:"Nuestras autoescuelas"}) %>
+    <div class="container">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Peques</th>
+
+                </tr>
+            </thead>
+            <tbody>
+      <% if (arraypeques.length> 0) { %>
+          <!--Haremos el foreach para recorrer el array-->
+          <% arraypeques.forEach(peques => { %>
+              <tr>
+                  <th scope="row"><%= peques.Peques %></th>
+
+   
+              </tr>
+          <% }) %>
+      <% } %>
+</tbody>
+        </table>
+    </div>
+
+
+    <%- include("templates/cierre") %>
