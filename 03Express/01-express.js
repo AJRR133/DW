@@ -1,6 +1,8 @@
 const express = require('express')
 const app = express()
-const port = 3000
+require('dotenv').config()
+
+const port = process.env.PORT || 3000
 
 app.set('view engine', 'ejs');
 app.use('views', express.static(__dirname+'/views'));
@@ -18,14 +20,12 @@ app.use('/', require('./router/rutas'));
 app.use('/pokemon', require('./router/pokemon'));
 
 const mongoose = require('mongoose');
-const user ='arenrod133_db_user';
-const password = 'AWLJNU';
-const dbname = 'pokemon';
-const uri = `mongodb+srv://${user}:${password}@cluster.uizdr79.mongodb.net/${dbname}?retryWrites=true&w=majority`;
+
+const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster.uizdr79.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`;
 mongoose.connect(uri)
 
   .then(()=>console.log('Base de datos conectada'))
-  //.then(()=>console.log(e))
+  .catch(e=>console.log(e))
 
 app.get('/pruebas', (req, res) => {
   res.render("pruebas",{titulo:"Titulo dinamico",descripcion:"descripcion JS"})
