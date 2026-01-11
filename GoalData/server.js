@@ -9,13 +9,13 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// Middleware para recibir datos del body
+//  recibir datos del body
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Rutas (igual que tu ejemplo)
+// Rutas 
 app.use('/', require('./router/rutas'));      // Ruta principal
-app.use('/usuarios', require('./router/usuarios')); // Nuestra ruta CRUD usuarios
+app.use('/usuarios', require('./router/usuarios')); //  ruta CRUD usuarios
 
 // Conexión a MongoDB Atlas
 const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster.uizdr79.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`;

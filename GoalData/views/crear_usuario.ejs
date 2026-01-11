@@ -1,13 +1,16 @@
-<%- include("templates/cabecera", {titulo: 'Nuevo Usuario' }) %>
+<%- include("templates/cabecera",{titulo:"Crear Usuario"}) %>
+
 <div class="container">
-    <h1>Crear nuevo Usuario</h1>
-    <form action="/usuarios" class="my-2" method="POST">
-        <input type="number" placeholder="ID Usuario" class="form-control my-2" name="id_usuario">
-        <input type="text" placeholder="Nombre" class="form-control my-2" name="nombre">
-        <input type="email" placeholder="Correo" class="form-control my-2" name="correo">
-        <input type="text" placeholder="Rol (basico/premium/admin)" class="form-control my-2" name="rol">
-        <input type="password" placeholder="Contraseña" class="form-control my-2" name="contraseña">
-        <button type="submit" class="btn btn-dark btn-block">Agregar</button>
+    <h1>Crear Usuario</h1>
+
+    <form action="/usuarios" method="POST">
+        <input type="text" name="nombre" placeholder="Nombre" class="form-control my-2" required>
+        <input type="email" name="correo" placeholder="Correo" class="form-control my-2" required>
+        <input type="text" name="rol" placeholder="Rol (basico/premium/admin)" class="form-control my-2">
+        <input type="password" name="contraseña" placeholder="Contraseña" class="form-control my-2">
+
+        <button class="btn btn-dark">Crear</button>
     </form>
 </div>
+
 <%- include("templates/cierre") %>

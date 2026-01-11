@@ -1,12 +1,16 @@
 <%- include("templates/cabecera",{titulo:"Usuarios"}) %>
+
 <div class="container">
-    <h1>CRUD Usuarios Mongo</h1>
-    <a class="btn btn-success btn-block my-4" href="/usuarios/crear">Crear nuevo usuario</a>
+    <h1>Registro usuarios</h1>
+
+    <a class="btn btn-success my-4" href="/usuarios/crear">
+        Crear nuevo usuario
+    </a>
+
     <table class="table">
-        <thead class="thead-dark">
+        <thead>
             <tr>
-                <th>#</th>
-                <th>ID Usuario</th>
+                <th>ID</th>
                 <th>Nombre</th>
                 <th>Correo</th>
                 <th>Rol</th>
@@ -14,21 +18,22 @@
             </tr>
         </thead>
         <tbody>
-            <% if (arrayUsuarios.length > 0) { %>
-                <% arrayUsuarios.forEach(usuario => { %>
-                    <tr>
-                        <th scope="row"><%= usuario._id %></th>
-                        <td><%= usuario.id_usuario %></td>
-                        <td><%= usuario.nombre %></td>
-                        <td><%= usuario.correo %></td>
-                        <td><%= usuario.rol %></td>
-                        <td>
-                            <a class="btn btn-warning btn-sm" href="usuarios/<%= usuario._id %>">Editar/Eliminar</a>
-                        </td>
-                    </tr>
-                <% }) %>
-            <% } %>
+            <% arrayUsuarios.forEach(usuario => { %>
+                <tr>
+                    <td><%= usuario._id %></td>
+                    <td><%= usuario.nombre %></td>
+                    <td><%= usuario.correo %></td>
+                    <td><%= usuario.rol %></td>
+                    <td>
+                        <a class="btn btn-warning btn-sm"
+                           href="/usuarios/<%= usuario._id %>">
+                            Editar / Eliminar
+                        </a>
+                    </td>
+                </tr>
+            <% }) %>
         </tbody>
     </table>
 </div>
+
 <%- include("templates/cierre") %>

@@ -1,16 +1,20 @@
-<%- include("templates/cabecera", {titulo: 'Detalles del Usuario' }) %>
+<%- include("templates/cabecera",{titulo:"Detalle Usuario"}) %>
+
 <div class="container">
-    <h1>Detalles del Usuario</h1>
+    <h1>Detalle del Usuario</h1>
+
     <% if (error) { %>
-        <%= mensaje %> 
-        <a href="/usuarios" class="btn btn-dark btn-block my-2">Volver</a>
+        <p><%= mensaje %></p>
+        <a href="/usuarios" class="btn btn-dark my-2">
+            Volver
+        </a>
     <% } %>
+
     <% if (!error) { %>
         <table class="table">
             <thead>
                 <tr>
-                    <th>#</th>
-                    <th>ID Usuario</th>
+                    <th>ID</th>
                     <th>Nombre</th>
                     <th>Correo</th>
                     <th>Rol</th>
@@ -19,17 +23,25 @@
             </thead>
             <tbody>
                 <tr>
-                    <th scope="row"><%= usuario._id %></th>
-                    <td><%= usuario.id_usuario %></td>
+                    <td><%= usuario._id %></td>
                     <td><%= usuario.nombre %></td>
                     <td><%= usuario.correo %></td>
                     <td><%= usuario.rol %></td>
                     <td>
-                        <button class="btn btn-danger btn-sm" data-id="<%= usuario._id %>">Eliminar</button>
+                        <form action="/usuarios/eliminar/<%= usuario._id %>" method="POST">
+                            <button class="btn btn-danger btn-sm">
+                                Eliminar
+                            </button>
+                        </form>
                     </td>
                 </tr>
             </tbody>
         </table>
+
+        <a href="/usuarios" class="btn btn-dark">
+            Volver
+        </a>
     <% } %>
 </div>
+
 <%- include("templates/cierre") %>
