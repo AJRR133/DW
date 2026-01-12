@@ -5,42 +5,39 @@
 
     <% if (error) { %>
         <p><%= mensaje %></p>
-        <a href="/usuarios" class="btn btn-dark my-2">
-            Volver
-        </a>
+        <a href="/usuarios" class="btn btn-dark my-2">Volver</a>
     <% } %>
 
     <% if (!error) { %>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Correo</th>
-                    <th>Rol</th>
-                    <th>Acción</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><%= usuario._id %></td>
-                    <td><%= usuario.nombre %></td>
-                    <td><%= usuario.correo %></td>
-                    <td><%= usuario.rol %></td>
-                    <td>
-                        <form action="/usuarios/eliminar/<%= usuario._id %>" method="POST">
-                            <button class="btn btn-danger btn-sm">
-                                Eliminar
-                            </button>
-                        </form>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <form action="/usuarios/editar/<%= usuario._id %>" method="POST">
+            <div class="mb-2">
+                <label>Nombre</label>
+                <input type="text" name="nombre" value="<%= usuario.nombre %>" class="form-control">
+            </div>
 
-        <a href="/usuarios" class="btn btn-dark">
-            Volver
-        </a>
+            <div class="mb-2">
+                <label>Correo</label>
+                <input type="email" name="correo" value="<%= usuario.correo %>" class="form-control">
+            </div>
+
+            <div class="mb-2">
+                <label>Rol</label>
+                <input type="text" name="rol" value="<%= usuario.rol %>" class="form-control">
+            </div>
+
+            <div class="mb-2">
+                <label>Contraseña</label>
+                <input type="text" name="contraseña" value="<%= usuario.contraseña %>" class="form-control">
+            </div>
+
+            <button class="btn btn-warning my-2">Guardar cambios</button>
+        </form>
+
+        <form action="/usuarios/eliminar/<%= usuario._id %>" method="POST" style="margin-top: 10px;">
+            <button class="btn btn-danger">Eliminar</button>
+        </form>
+
+        <a href="/usuarios" class="btn btn-dark mt-2">Volver</a>
     <% } %>
 </div>
 

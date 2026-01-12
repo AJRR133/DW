@@ -6,9 +6,7 @@ const Usuario = require('../models/usuario');
 router.get('/', async (req, res) => {
     try {
         const arrayUsuariosDB = await Usuario.find();
-        res.render('usuarios', {
-            arrayUsuarios: arrayUsuariosDB
-        });
+        res.render('usuarios', { arrayUsuarios: arrayUsuariosDB });
     } catch (error) {
         console.error(error);
     }
@@ -30,7 +28,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-// DETALLE (EDITAR / ELIMINAR)
+// DETALLE + EDITAR FORM
 router.get('/:id', async (req, res) => {
     try {
         const usuarioDB = await Usuario.findById(req.params.id);
@@ -46,7 +44,17 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-// ELIMINAR 
+// GUARDAR CAMBIOS (EDITAR)
+router.post('/editar/:id', async (req, res) => {
+    try {
+        await Usuario.findByIdAndUpdate(req.params.id, req.body);
+        res.redirect('/usuarios');
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+// ELIMINAR
 router.post('/eliminar/:id', async (req, res) => {
     try {
         await Usuario.deleteOne({ _id: req.params.id });

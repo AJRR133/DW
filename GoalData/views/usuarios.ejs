@@ -1,11 +1,9 @@
 <%- include("templates/cabecera",{titulo:"Usuarios"}) %>
 
 <div class="container">
-    <h1>Registro usuarios</h1>
+    <h1>Usuarios</h1>
 
-    <a class="btn btn-success my-4" href="/usuarios/crear">
-        Crear nuevo usuario
-    </a>
+    <a class="btn btn-success my-4" href="/usuarios/crear">Crear nuevo usuario</a>
 
     <table class="table">
         <thead>
@@ -25,8 +23,7 @@
                     <td><%= usuario.correo %></td>
                     <td><%= usuario.rol %></td>
                     <td>
-                        <a class="btn btn-warning btn-sm"
-                           href="/usuarios/<%= usuario._id %>">
+                        <a href="/usuarios/<%= usuario._id %>" class="btn btn-warning btn-sm">
                             Editar / Eliminar
                         </a>
                     </td>
