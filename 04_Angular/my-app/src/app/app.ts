@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Hero } from './hero';
+import { Pokemon } from './pokemon';
 
 @Component({
  selector: 'app-root',
@@ -11,7 +11,35 @@ import { Hero } from './hero';
 export class App {
  protected readonly title = signal('my-app');
 
-  getHeroes(){
+  getPokemon(){
+     let pokemons = [
+       new Pokemon("Magikarp","Agua", 'Pokemon carpa'),
+       new Pokemon("Charmander","Fuego", 'Pokemon salamandra'),
+       new Pokemon("Pikachu","Electrico", 'Pokemon Ratón'),
+     ];
+     return pokemons;
+ }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* getHeroes(){
      let heroes = [
        new Hero(1, 'Spiderman'),
        new Hero(13, 'Wonder Woman'),
@@ -19,6 +47,4 @@ export class App {
        new Hero(20, 'Catwoman')
      ];
      return heroes;
- }
-}
-
+ }*/
